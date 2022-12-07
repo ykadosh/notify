@@ -8,12 +8,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/notify.umd.cjs",
-  "module": "./dist/notify.js",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
-      "import": "./dist/notify.js",
-      "require": "./dist/notify.umd.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
     }
   },
   "scripts": {

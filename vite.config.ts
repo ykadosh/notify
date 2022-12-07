@@ -14,7 +14,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.tsx'),
       name: 'Notify',
       // the proper extensions will be added
-      fileName: 'notify'
+      fileName: 'index'
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
