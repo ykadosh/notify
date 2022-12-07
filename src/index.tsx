@@ -1,4 +1,3 @@
-import './index.css'
 import styles from './Notify.module.css'
 
 interface Props {
@@ -8,6 +7,6 @@ interface Props {
 
 export const MyCoolComponent = ({ prop1, prop2 }: Props) => {
     return (
-        <div className={styles.notify}>Hi {prop1} {prop2}</div>
+        <div className={styles.notify}>Hiii {prop1} {prop2}</div>
     )
 }
