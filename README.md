@@ -9,11 +9,6 @@
   </a>
 
   <a href="https://www.npmjs.com/package/@yoavik/notify">
-    <img src="https://img.shields.io/npm/dt/upload-js?color=%234ba0f6" />
-  </a>
-  <br/>
-
-  <a href="https://www.npmjs.com/package/@yoavik/notify">
     <img src="https://img.shields.io/badge/TypeScript-included-4ba0f6" />
   </a>
 </p>
