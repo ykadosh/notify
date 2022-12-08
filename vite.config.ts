@@ -6,7 +6,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/guide/build.html#library-mode
 export default defineConfig({
-  mode: 'production',
   plugins: [dts(), react(), cssInjectedByJsPlugin()],
   build: {
     lib: {
@@ -19,8 +18,9 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['react'],
+      external: ['react', 'react/jsx-runtime'],
       output: {
+        format: 'umd',
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
