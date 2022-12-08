@@ -22,8 +22,7 @@
   },
   "dependencies": {
     "nanoid": "4.0.0",
-    "react": ">=16",
-    "react-transition-group": "4.4.5"
+    "react": ">=16"
   },
   "peerDependencies": {
     "react": ">=16"
