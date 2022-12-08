@@ -93,33 +93,5 @@ $easing: ease-in-out;
             cursor: pointer;
             display: flex;
         }
-
-        .icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 0.3rem;
-            margin-right: 1rem;
-            font-size: 1rem;
-            color: white;
-
-            &.error {
-                background-color: #f87171;
-            }
-
-            &.success {
-                background-color: #10b981;
-            }
-
-            &.info {
-                background-color: #60a5fa;
-            }
-
-            &.warning {
-                background-color: #f59e0b;
-            }
-        }
     }
 }
