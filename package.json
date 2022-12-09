@@ -2,7 +2,7 @@
   "name": "@yoavik/notify",
   "description": "A notification component for React",
   "repository": "github:ykadosh/notify",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "types": "./dist/index.d.ts",
   "files": [

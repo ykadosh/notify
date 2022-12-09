@@ -29,7 +29,7 @@ add({
 ```
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@yoavik/notify">
+  <a href="https://codesandbox.io/s/yoavik-notify-example-qlcuui">
     <img src="https://img.shields.io/badge/Try_on_Codesandbox-4ba0f6?style=for-the-badge"/>
   </a>
 </p>
