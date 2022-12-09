@@ -2,7 +2,7 @@
   "name": "@yoavik/notify",
   "description": "A notification component for React",
   "repository": "github:ykadosh/notify",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "types": "./dist/index.d.ts",
   "files": [
@@ -22,14 +22,17 @@
   },
   "dependencies": {
     "nanoid": "4.0.0",
-    "react": ">=16"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "peerDependencies": {
-    "react": ">=16"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "devDependencies": {
     "@types/node": "18.11.10",
     "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.9",
     "@types/react-transition-group": "4.4.5",
     "@vitejs/plugin-react": "2.2.0",
     "sass": "1.56.1",

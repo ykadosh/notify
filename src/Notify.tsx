@@ -1,8 +1,10 @@
-import React, { useCallback, useState, useRef, memo } from 'react';
+import React, { StrictMode, useCallback, useRef } from 'react';
+import { createRoot } from 'react-dom/client';
 import { nanoid } from 'nanoid';
 import { Transition } from './Transition';
 import { Notification } from './Notification';
 import { Notification as iNotification } from './Notify.types';
+import { useStore } from './hooks/useStore';
 import styles from './Notify.module.scss';
 
 const MAX_NOTIFICATIONS = 5;
@@ -14,7 +16,7 @@ interface NotificationProps extends iNotification {
 export const useNotifications = () => {
     const timeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
     const paused = useRef(-1);
-    const [notifications, setNotifications] = useState([] as NotificationProps[]);
+    const [notifications, setNotifications] = useStore<NotificationProps[]>('notifications', [] as NotificationProps[]);
 
     const add = useCallback((n: NotificationProps) => {
         const notification = { ...n };
@@ -82,5 +84,28 @@ export const Notifications = ({ notifications, remove, pause, resume, animationD
                 </Transition>
             ))}
         </Transition.Group>
+    );
+}
+
+const App = () => {
+    const { props } = useNotifications();
+    return (
+        <Notifications {...props} animationDuration={400}/>
+    );
+}
+
+if (typeof window !== 'undefined') {
+    let element = document.getElementById('notify-root');
+    if (!element) {
+        element = document.createElement('div');
+        element.id = 'notify-root';
+        document.body.appendChild(element);
+    }
+    const root = createRoot(element!);
+
+    root.render(
+        <StrictMode>
+            <App/>
+        </StrictMode>
     );
 }

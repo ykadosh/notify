@@ -1,5 +1,9 @@
 $easing: ease-in-out;
 
+:global(#notify-root) {
+    display: contents;
+}
+
 .notifications {
     --width: 20rem;
     --height: 4.5rem;
@@ -8,6 +12,8 @@ $easing: ease-in-out;
     position: fixed;
     bottom: 0;
     pointer-events: none;
+    left: 50%;
+    transform: translateX(-50%);
 
     &:hover {
         .notification {
