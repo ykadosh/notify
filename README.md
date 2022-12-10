@@ -20,6 +20,10 @@
 
 <p align="center">:construction: This package is under active development. :construction: <br/>Some APIs are likely to break.</p>
 
+```
+npm i @yoavik/notify
+```
+
 ```ts
 import { useNotifications } from '@yoavik/notify';
 const { add } = useNotifications();
