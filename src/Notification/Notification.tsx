@@ -38,8 +38,8 @@ export const Notification = memo(({ id, title, content, type, index, total, remo
             <div className={styles.notificationInner}>
                 {type && <Icon type={type}/>}
                 <div>
-                    <h2>{title}</h2>
-                    <p>{content}</p>
+                    {title && <h2>{title}</h2>}
+                    {content && <div>{content}</div>}
                 </div>
                 <CloseButton onClick={() => remove(id)}/>
             </div>

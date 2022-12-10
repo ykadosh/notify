@@ -7,7 +7,6 @@ Transition.Group = function({ children, ...props }: { children: ReactNode[] }) {
     const addNode = (key, node) => {
         setNodes(nodes => {
             if (!nodes[key]) {
-                console.log(key, 'enter');
                 const next = { ...nodes };
                 next[key] = cloneElement(node, { className: 'enter'});
                 return next;
@@ -29,7 +28,6 @@ Transition.Group = function({ children, ...props }: { children: ReactNode[] }) {
             timeouts.current[key] = {
                 target: stage,
                 timeout: setTimeout(() => {
-                    console.log(key, stage);
                     delete timeouts.current[key];
                     setNodes(nodes => {
                         const next = { ...nodes };
@@ -70,7 +68,6 @@ Transition.Group = function({ children, ...props }: { children: ReactNode[] }) {
             }
             if (nodes[key].props.className === 'exit exit-active') {
                 setTimeout(() => {
-                    console.log(key, 'unmounted');
                     setNodes(nodes => {
                         const next = { ...nodes };
                         delete next[key];

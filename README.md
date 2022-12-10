@@ -2,11 +2,15 @@
 
 <p align="center">
   <a href="https://github.com/ykadosh/notify">
-    <img src="https://img.shields.io/badge/gzipped-3%20kb-4ba0f6" />
+    <img src="https://img.shields.io/bundlephobia/minzip/@yoavik/notify?color=4ba0f6&label=gzipped" />
   </a>
 
   <a href="https://www.npmjs.com/package/@yoavik/notify">
-    <img src="https://img.shields.io/badge/@yoavik/notify-npm-4ba0f6" />
+    <img src="https://img.shields.io/npm/v/@yoavik/notify?color=4ba0f6" />
+  </a>
+
+  <a href="https://www.npmjs.com/package/@yoavik/notify">
+    <img src="https://img.shields.io/npm/dw/@yoavik/notify?color=4ba0f6" />
   </a>
 
   <a href="https://www.npmjs.com/package/@yoavik/notify">
@@ -15,8 +19,6 @@
 </p>
 
 <p align="center">:construction: This package is under active development. :construction: <br/>Some APIs are likely to break.</p>
-
-## Basic example
 
 ```ts
 import { useNotifications } from '@yoavik/notify';
