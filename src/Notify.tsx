@@ -1,15 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Notifications } from './Notifications';
-import { useNotify } from './hooks/useNotify';
 import './Notify.scss';
-
-const App = () => {
-    const { props } = useNotify();
-    return (
-        <Notifications {...props} animationDuration={400}/>
-    );
-}
 
 if (typeof window !== 'undefined') {
     let element = document.getElementById('notify-root');
@@ -22,7 +14,7 @@ if (typeof window !== 'undefined') {
 
     root.render(
         <StrictMode>
-            <App/>
+            <Notifications/>
         </StrictMode>
     );
 }

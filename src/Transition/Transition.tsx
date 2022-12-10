@@ -84,7 +84,13 @@ Transition.Group = function({ children, ...props }: { children: ReactNode[] }) {
     );
 }
 
-export function Transition({ children, timeout, className }: { children: any, timeout: number }) {
+interface Props {
+    children: any,
+    timeout: number,
+    className?: string,
+}
+
+export function Transition({ children, timeout, className }: Props) {
     const child = Children.only(children);
     return cloneElement(child, { className });
 }

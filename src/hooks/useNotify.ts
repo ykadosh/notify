@@ -48,11 +48,13 @@ export const useNotify = () => {
         });
     }, [notifications]);
 
-    const remove = useCallback((id: string) => {
-        setNotifications(n => n.filter(n => n.id !== id));
+    const remove = useCallback((...ids: string[]) => {
+        if (ids.length === 0) {
+            setNotifications([]);
+            return;
+        }
+        setNotifications(n => n.filter(n => !ids.includes(n.id)));
     }, []);
 
-    const props = { notifications, remove, pause, resume };
-
-    return { props, add };
+    return { add, remove, pause, resume };
 };
