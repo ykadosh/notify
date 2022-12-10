@@ -1,36 +1,3 @@
 #notify-root {
     display: contents;
 }
-
-.notify__notifications {
-    --width: 20rem;
-    --height: 4.5rem;
-    --gap: 1rem;
-
-    position: fixed;
-    bottom: 0;
-    pointer-events: none;
-    left: 50%;
-    transform: translateX(-50%);
-
-    &:hover {
-        .notify__notification {
-            // Unstack notifications when hovering over the container
-            transform: translateY(0) scale(1);
-
-            .notify__notification-inner {
-                opacity: 1;
-                background-color: hsl(0 0% 100% / 40%);
-            }
-
-            &.exit-active {
-                // When the list is expanded, avoid animating the y position
-                transform: translateY(0) scale(0.5);
-
-                .notify__notification-inner {
-                    background-color: hsl(100 0% 100% / 100%) !important;
-                }
-            }
-        }
-    }
-}

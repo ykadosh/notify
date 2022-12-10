@@ -6,7 +6,6 @@ interface Listener<T> {
     (v: T): T
 }
 
-
 const listeners: { [K: string]: Listener<any>[] } = {};
 
 export function useStore<T>(key: string, initialValue: T): [T, (v: SetStateAction<T>) => void] {
