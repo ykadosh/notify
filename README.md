@@ -25,8 +25,8 @@ npm i @yoavik/notify
 ```
 
 ```ts
-import { useNotifications } from '@yoavik/notify';
-const { add } = useNotifications();
+import { useNotify } from '@yoavik/notify';
+const { add } = useNotify();
 add({
   title: 'Some title',
   content: 'Some content',
