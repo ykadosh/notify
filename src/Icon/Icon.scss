@@ -1,4 +1,4 @@
-.icon {
+.notify__icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,19 +14,19 @@
     fill: white;
   }
 
-  &.error {
+  &.notify__icon--error {
     background-color: #f87171;
   }
 
-  &.success {
+  &.notify__icon--success {
     background-color: #10b981;
   }
 
-  &.info {
+  &.notify__icon--info {
     background-color: #60a5fa;
   }
 
-  &.warning {
+  &.notify__icon--warning {
     background-color: #f59e0b;
   }
 }

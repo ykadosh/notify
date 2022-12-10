@@ -5,7 +5,7 @@ import { Transition } from './Transition';
 import { Notification } from './Notification';
 import { Notification as iNotification } from './Notify.types';
 import { useStore } from './hooks/useStore';
-import styles from './Notify.module.scss';
+import './Notify.scss';
 
 const MAX_NOTIFICATIONS = 5;
 
@@ -73,7 +73,7 @@ export const Notifications = ({ notifications, remove, pause, resume, animationD
 
     return (
         // @ts-ignore
-        <Transition.Group className={styles.notifications} style={{ '--duration': `${animationDuration}ms` as any}} onMouseEnter={pause} onMouseLeave={resume}>
+        <Transition.Group className='notify__notifications' style={{ '--duration': `${animationDuration}ms` as any}} onMouseEnter={pause} onMouseLeave={resume}>
             {[...notifications].reverse().map((notification, index) => (
                 <Transition key={notification.id} timeout={animationDuration}>
                     <Notification

@@ -1,16 +1,14 @@
 import React, { memo } from 'react';
-import styles from '../Notify.module.scss';
-import styles1 from './Notification.module.scss';
 import { Notification as iNotification } from '../Notify.types';
 import { Icon } from '../Icon';
+import './Notification.scss';
 
 const STACKING_OVERLAP = 0.9; // A range from 0 to 1 representing the percentage of the notification's height that should overlap the next notification
 
 const CloseButton = ({ onClick }: { onClick: () => void }) => {
     return (
-        <button className={styles1.close} onClick={onClick}>
+        <button className='notify__close' onClick={onClick}>
             <svg viewBox='0 0 24 24'>
-                <path fill='none' d='M0 0h24v24H0z'/>
                 <path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/>
             </svg>
         </button>
@@ -33,13 +31,13 @@ export const Notification = memo(({ id, title, content, type, index, total, remo
     const y = inverseIndex * 100 * STACKING_OVERLAP;
     return (
         <div
-            className={`${styles.notification} ${className}`}
+            className={`notify__notification ${className}`}
             style={{'--bg': bg, '--opacity': opacity, '--scale': scale, '--y': `${y}%`} as any }>
-            <div className={styles.notificationInner}>
+            <div className='notify__notification-inner'>
                 {type && <Icon type={type}/>}
                 <div>
-                    {title && <h2>{title}</h2>}
-                    {content && <div>{content}</div>}
+                    {title && <div className='notify__title'>{title}</div>}
+                    {content && <div className='notify__content'>{content}</div>}
                 </div>
                 <CloseButton onClick={() => remove(id)}/>
             </div>

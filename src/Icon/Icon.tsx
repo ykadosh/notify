@@ -1,6 +1,6 @@
 import React from 'react';
 import { NotificationType } from '../Notify.types';
-import styles from './Icon.module.scss';
+import './Icon.scss';
 
 const Success = () => (
     <svg viewBox='0 0 16 16'>
@@ -40,7 +40,7 @@ interface Props {
 export const Icon = ({ type }: Props) => {
     const SVG = NOTIFICATION_ICON[type];
     return (
-        <div className={`${styles.icon} ${styles[type]}`}>
+        <div className={`notify__icon notify__icon--${type}`}>
             <SVG/>
         </div>
     );

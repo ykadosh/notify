@@ -1,6 +1,13 @@
 {
   "name": "@yoavik/notify",
   "description": "A notification component for React",
+  "keywords": [
+    "react",
+    "notification",
+    "toast",
+    "push",
+    "alert"
+  ],
   "repository": "github:ykadosh/notify",
   "version": "0.0.6",
   "type": "module",
