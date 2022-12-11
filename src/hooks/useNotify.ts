@@ -1,6 +1,6 @@
-import { useCallback, useRef } from 'react';
-import { useStore } from './useStore';
+import { useCallback } from 'react';
 import { nanoid } from 'nanoid';
+import { useStore } from './useStore';
 import { Notification as iNotification } from '../Notify.types';
 
 const MAX_NOTIFICATIONS = 5;
@@ -9,9 +9,10 @@ interface NotificationProps extends iNotification {
     id: string;
 }
 
+let timeouts: ReturnType<typeof setTimeout>[] = [];
+let paused = -1;
+
 export const useNotify = () => {
-    const timeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
-    const paused = useRef(-1);
     const [notifications, setNotifications] = useStore<NotificationProps[]>('notifications', [] as NotificationProps[]);
 
     const add = useCallback((n: NotificationProps) => {
@@ -25,22 +26,23 @@ export const useNotify = () => {
             }
             return next;
         });
-        timeouts.current.push(setTimeout(() => {
+        timeouts.push(setTimeout(() => {
             remove(notification.id);
         }, notification.timeout - Date.now()));
+        return notification.id
     }, []);
 
     const pause = useCallback(() => {
-        timeouts.current.forEach(clearTimeout);
-        timeouts.current = [];
-        paused.current = Date.now();
+        timeouts.forEach(clearTimeout);
+        timeouts = [];
+        paused = Date.now();
     }, []);
 
     const resume = useCallback(() => {
         setNotifications(n => {
             return n.map(notification => {
-                notification.timeout += Date.now() - paused.current;
-                timeouts.current.push(setTimeout(() => {
+                notification.timeout += Date.now() - paused;
+                timeouts.push(setTimeout(() => {
                     remove(notification.id);
                 }, notification.timeout - Date.now()));
                 return notification;
