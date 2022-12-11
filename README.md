@@ -20,6 +20,10 @@
 
 <p align="center">:construction: This package is under active development. :construction: <br/>Some APIs are likely to break.</p>
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/7763083/206893739-7807e967-421b-4cdc-b009-1af8f2c076b5.gif" />
+</p>
+
 ```
 npm i @yoavik/notify
 ```
