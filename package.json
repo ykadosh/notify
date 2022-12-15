@@ -1,6 +1,6 @@
 {
   "name": "@yoavik/notify",
-  "description": "A notification component for React",
+  "description": "A React notifications/toast library",
   "keywords": [
     "react",
     "notification",
